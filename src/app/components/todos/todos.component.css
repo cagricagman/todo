@@ -1,0 +1,7 @@
+.doneTodo{
+    text-decoration: line-through;
+}
+
+.waitTodo{
+    text-decoration: none;
+}

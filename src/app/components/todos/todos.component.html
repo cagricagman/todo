@@ -1,0 +1,30 @@
+<div class="col-md-12">
+    <form (submit)="todoAdd()">
+
+        <div class="input-group mb-3">
+            <input type="text" name="inputTodo" class="form-control" [(ngModel)]="inputTodo" placeholder="Görev Giriniz">
+            <button class="btn btn-outline-secondary" id="button-addon2">Ekle</button>
+          </div>
+
+    </form>
+</div>
+<div class="col-md-12">
+    <div class="card mt-2" *ngFor="let todo of todos; let i = index">
+        <div class="card-body">
+          <div class="row">
+            <div class="id" hidden>{{ i }}</div>
+              <div class="col-md-10">
+                <div class="form-check">
+                    <input class="form-check-input" (click)="todoDone(i)" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label {{ (todo.complated ? 'doneTodo' : 'waitingTodo') }}" for="flexCheckDefault">
+                        {{ todo.content }}
+                    </label>
+                  </div>
+              </div>
+              <div class="col-md-2 pull-right">
+                  <button class="btn btn-danger" (click)="todoDelete(i)">Sil</button>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>
